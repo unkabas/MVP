@@ -1,7 +1,7 @@
 import { Product } from '@/entities/product/products'
 import axios from 'axios'
 
-const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT
+const API_ENDPOINT = 'http://localhost:8080/api/products'
 
 if (!API_ENDPOINT) {
 	throw new Error('API_ENDPOINT не задан')
@@ -26,7 +26,7 @@ export const fetchProducts = async (): Promise<{
 			name: item.name,
 			price: item.price,
 			description: item.description,
-			imageUrl: item.imageUrl,
+			imageUrl: item.Imageurl,
 			isNew: item.isNew,
 			sex: item.sex,
 		}))

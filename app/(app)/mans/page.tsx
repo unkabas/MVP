@@ -1,4 +1,3 @@
-// app/mans/page.tsx
 import Mans from '@/features/mans/mans'
 import { fetchProducts } from '@/shared/api/Product'
 
