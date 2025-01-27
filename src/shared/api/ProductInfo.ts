@@ -14,9 +14,8 @@ export const fetchProductById = async (
 	error: string | null
 }> => {
 	try {
-		const response = await axios.get(`${API_ENDPOINT}/${id}`)
+		const response = await axios.get(`${API_ENDPOINT}products/${id}`)
 
-		console.log('Full API Response:', response.data)
 		const data = response.data.data
 
 		if (!data || typeof data !== 'object') {
@@ -35,8 +34,6 @@ export const fetchProductById = async (
 
 		return { product, error: null }
 	} catch (err) {
-		console.error(`Ошибка при загрузке продукта с ID ${id}:`, err)
-
 		const errorMessage = axios.isAxiosError(err)
 			? `Ошибка при загрузке продукта: ${err.message}`
 			: 'Неизвестная ошибка'

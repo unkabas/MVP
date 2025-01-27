@@ -8,9 +8,8 @@ export const fetchProducts = async (): Promise<{
 	error: string | null
 }> => {
 	try {
-		const response = await axios.get(`${API_ENDPOINT}`)
+		const response = await axios.get(`${API_ENDPOINT}products`)
 
-		console.log('Full API Response:', response.data)
 		const data = response.data.data
 
 		if (!data || !Array.isArray(data)) {
@@ -29,8 +28,6 @@ export const fetchProducts = async (): Promise<{
 
 		return { products, error: null }
 	} catch (err) {
-		console.error('Ошибка при загрузке товаров:', err)
-
 		const errorMessage = axios.isAxiosError(err)
 			? `Ошибка при загрузке товаров: ${err.message}`
 			: 'Неизвестная ошибка'
