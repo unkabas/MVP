@@ -1,5 +1,5 @@
 import Mans from '@/features/mans/mans'
-import { fetchProducts } from '@/shared/api/Product'
+import { fetchProducts } from '@/shared/api/ProductList'
 
 const MansPage = async () => {
 	const { products, error } = await fetchProducts()

@@ -3,7 +3,7 @@ export interface Product {
 	name: string
 	description: string
 	price: number
-	imageUrl: string // Приведено к единому стилю
+	imageUrl: string
 	sex: boolean
 	isNew: boolean
 }

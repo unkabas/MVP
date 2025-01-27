@@ -1,22 +1,21 @@
-'use client'
-import { Item } from '@/views/Product/ui'
-import { useParams } from 'next/navigation'
+import { fetchProductById } from '@/shared/api/ProductInfo'
+import { Item } from '@/views/Product'
 
-const ProductPage = () => {
-	const { id } = useParams()
+const ProductPage = async ({ params }: { params: { id: string } }) => {
+	// Асинхронный доступ к параметрам маршрута
+	const { id } = await params
 
-	// Проверка, что id доступен
-	if (!id) {
-		return <div>Loading...</div>
+	const { product, error } = await fetchProductById(id)
+
+	if (error) {
+		return <div>Ошибка: {error}</div>
 	}
 
-	const item = productList.find(p => p.id === String(id))
-
-	if (!item) {
-		return <div>Product not found</div>
+	if (!product) {
+		return <div>Продукт с ID {id} не найден.</div>
 	}
 
-	return <Item product={item} />
+	return <Item product={product} />
 }
 
 export default ProductPage
