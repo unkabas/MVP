@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+@layer base {
+	:root {
+		--background: 0 0% 0%; /* Черный цвет */
+		--foreground: 0 0% 100%; /* Белый цвет */
+		--primary: 270 100% 50%; /* Фиолетовый цвет */
+		--primary-foreground: 0 0% 100%; /* Белый цвет */
+		--secondary: 0 0% 50%; /* Серый цвет */
+		--secondary-foreground: 0 0% 100%; /* Белый цвет */
+	}
+}
+
+html,
+body {
+	-webkit-overflow-scrolling: auto;
+	padding: 0px;
+	margin-top: 4px;
+}
+
+@layer base {
+	* {
+		border-color: hsl(var(--border));
+	}
+}
+
+@layer base {
+	* {
+		border-color: hsl(var(--border));
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}
