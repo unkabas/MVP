@@ -1,12 +1,17 @@
 import New from '@/features/new/new'
-import React from 'react'
+import { fetchProducts } from '@/shared/api/ProductList'
 
-const NewPage: React.FC = () => {
+const MansPage = async () => {
+	const { products, error } = await fetchProducts()
+
+	const filteredProducts = products.filter(product => product.isNew)
+
 	return (
 		<>
-			<New products={[]} error={null} />
+			{error && <div style={{ color: 'red' }}>{error}</div>}
+			<New products={filteredProducts} />
 		</>
 	)
 }
 
-export default NewPage
+export default MansPage

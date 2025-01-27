@@ -2,7 +2,6 @@ import { fetchProductById } from '@/shared/api/ProductInfo'
 import { Item } from '@/views/Product'
 
 const ProductPage = async ({ params }: { params: { id: string } }) => {
-	// Асинхронный доступ к параметрам маршрута
 	const { id } = await params
 
 	const { product, error } = await fetchProductById(id)

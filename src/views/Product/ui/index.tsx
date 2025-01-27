@@ -28,7 +28,7 @@ export const Item: FC<ProductProps> = ({ product }) => {
 				<img
 					src={product.imageUrl}
 					alt={product.name}
-					className='w-full max-w-xs md:max-w-full'
+					className='w-full max-w-xs md:w-full h-auto object-cover'
 				/>
 			</div>
 			<div className='w-full md:w-7/12 p-8 flex flex-col justify-center'>
