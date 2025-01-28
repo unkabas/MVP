@@ -1,4 +1,4 @@
-import { fetchProductById } from '@/shared/api/ProductInfo'
+import { fetchProductById } from '@/entities/product/api/ProductInfo'
 import { Item } from '@/views/Product'
 
 const ProductPage = async ({ params }: { params: { id: string } }) => {

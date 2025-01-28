@@ -1,5 +1,5 @@
-import Women from '@/features/womens/womens'
-import { fetchProducts } from '@/shared/api/ProductList'
+import { fetchProducts } from '@/entities/product/api/ProductList'
+import Catalog from '@/views/Catalog/Catalog'
 
 const MansPage = async () => {
 	const { products, error } = await fetchProducts()
@@ -9,7 +9,7 @@ const MansPage = async () => {
 	return (
 		<>
 			{error && <div style={{ color: 'red' }}>{error}</div>}
-			<Women products={filteredProducts} />
+			<Catalog products={filteredProducts} />
 		</>
 	)
 }

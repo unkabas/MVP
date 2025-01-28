@@ -6,6 +6,6 @@ if (!API_ENDPOINT) {
 	throw new Error('API_ENDPOINT не задан')
 }
 
-export const axiosInstance = axios.create({
+export const API = axios.create({
 	baseURL: API_ENDPOINT,
 })

@@ -1,11 +1,6 @@
-import { Product } from '@/entities/product/products'
+import { Product } from '@/entities/product/model/types'
+import { API } from '@/shared/api/axiosInstance'
 import axios from 'axios'
-
-const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT
-
-if (!API_ENDPOINT) {
-	throw new Error('API_ENDPOINT не задан')
-}
 
 export const fetchProductById = async (
 	id: string
@@ -14,7 +9,7 @@ export const fetchProductById = async (
 	error: string | null
 }> => {
 	try {
-		const response = await axios.get(`${API_ENDPOINT}products/${id}`)
+		const response = await API.get(`/products/${id}`)
 
 		const data = response.data.data
 

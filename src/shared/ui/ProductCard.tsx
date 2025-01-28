@@ -1,4 +1,4 @@
-import { Product } from '@/entities/product/products'
+import { Product } from '@/entities/product/model/types'
 import { APP_ROUTES } from '@/shared/config/routes'
 import Link from 'next/link'
 import React from 'react'

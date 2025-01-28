@@ -1,6 +1,6 @@
 'use client'
 
-import { Product as ProductType } from '@/entities/product/products'
+import { Product as ProductType } from '@/entities/product/model/types'
 import { Button } from '@/shared/ui/button'
 import {
 	Select,
